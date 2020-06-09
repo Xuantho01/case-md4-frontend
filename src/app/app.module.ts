@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavTemplateComponent } from './nav-template/nav-template.component';
 import { FooterTemplateComponent } from './footer-template/footer-template.component';
 import { LoginComponent } from './login/login.component';
 import { FoodComponent } from './food/food.component';
@@ -27,6 +26,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import {FormsModule} from '@angular/forms';
 import { ShopHomeComponent } from './shop-home/shop-home.component';
+import { NavSearchComponent } from './nav-search/nav-search.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {path: '',
@@ -40,13 +41,15 @@ const routes: Routes = [
   {path: 'blog',
     component: BlogComponent},
   {path: 'contact',
-    component: ContactComponent}
-  ];
+    component: ContactComponent},
+  {path: 'detail',
+    component: ProductDetailComponent},
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavTemplateComponent,
     FooterTemplateComponent,
     LoginComponent,
     FoodComponent,
@@ -69,11 +72,13 @@ const routes: Routes = [
     ProductDetailComponent,
     HomeComponentComponent,
     ShopHomeComponent,
+    NavSearchComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

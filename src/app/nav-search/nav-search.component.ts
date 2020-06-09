@@ -3,15 +3,20 @@ import {CategoryServiceService} from '../category-service.service';
 import {Category} from '../model/Category';
 
 @Component({
-  selector: 'app-shop-home',
-  templateUrl: './shop-home.component.html',
-  styleUrls: ['./shop-home.component.css']
+  selector: 'app-nav-search',
+  templateUrl: './nav-search.component.html',
+  styleUrls: ['./nav-search.component.css']
 })
-export class ShopHomeComponent implements OnInit {
-
+export class NavSearchComponent implements OnInit {
+  categoryList: Category[];
   constructor(private categoryService: CategoryServiceService) {
   }
-  categoryList: Category[];
+  ngOnInit() {
+    this.categoryService.getAll().subscribe( result => {
+      console.log(result);
+      this.categoryList = result;
+    });
+  }
   showNav(){
     const x = document.getElementById('nav-bar');
     if (x.style.display === 'none') {
@@ -19,10 +24,5 @@ export class ShopHomeComponent implements OnInit {
     } else {
       x.style.display = 'none';
     }
-  }
-  ngOnInit(): void {
-  this.categoryService.getAll().subscribe(reslt => {
-    this.categoryList = reslt;
-  });
   }
 }
