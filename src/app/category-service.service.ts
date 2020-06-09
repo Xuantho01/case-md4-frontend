@@ -10,7 +10,7 @@ export class CategoryServiceService {
   urlCategory = 'http://localhost:8081/api/category-form';
   constructor(private httpClient: HttpClient) {}
 
-  getAll(): Observable<Category[]>{
-    return this.httpClient.get<Category[]>(this.urlCategory);
-  }
+    getAll(): Observable<Category[]>{
+      return this.httpClient.get<Category[]>(this.urlCategory);
+    }
 }

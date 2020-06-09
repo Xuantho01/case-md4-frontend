@@ -12,8 +12,9 @@ export class FeaturedComponent implements OnInit {
 
   foodList: Food[];
   constructor(private addNewCart: CartServiceService, private foodService: FoodServiceService) {}
-  ngOnInit(): void {
+  ngOnInit(){
     this.foodService.getAll().subscribe(result => {
+      console.log(result);
       this.foodList = result;
     });
   }
