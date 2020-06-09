@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="checkout__form">
-      <h4>Billing Details</h4>
+      <h4>Register</h4>
       <form action="#">
         <div class="row">
           <div class="col-lg-8 col-md-6">
@@ -55,10 +55,10 @@
                 <p>Account Password<span>*</span></p>
                 <input type="text" formControlName="password" required>
               </div>
-              <div class="checkout__input__checkbox">
+              <div class="checkout__input__checkbox" formGroupName="userRole">
                 <label for="acc1">
                   Role User
-                  <input type="checkbox" id="acc1" checked formControlName="role=1">
+                  <input type="checkbox" id="acc1" formControlName="id" value="1" checked>
                   <span class="checkmark"></span>
                 </label>
                 <!--              <label for="acc2">-->
@@ -68,7 +68,8 @@
                 <!--              </label>-->
               </div>
               <div>
-                <input type="submit" value="Create">
+<!--                <input type="submit" value="Create">-->
+                <button type="button" class="btn btn-outline-success">Register</button>
               </div>
             </form>
           </div>

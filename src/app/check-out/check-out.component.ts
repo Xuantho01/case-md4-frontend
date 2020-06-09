@@ -11,13 +11,13 @@ import {getGlobalAnalytics} from '@angular/cli/models/analytics';
 export class CheckOutComponent implements OnInit {
   constructor(private user: FormBuilder, private userService: UserService) {}
   userForm = this.user.group({
-    email: [],
-    name: [],
-    password: [],
-    phone: [],
-    username: [],
+    email: [''],
+    name: [''],
+    password: [''],
+    phone: [''],
+    username: [''],
     userRole: this.user.group({
-      id: []
+      id: ['']
     })
   });
   ngOnInit(): void {
