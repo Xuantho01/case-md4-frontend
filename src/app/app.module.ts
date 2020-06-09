@@ -24,7 +24,7 @@ import { DetailBannerComponent } from './detail-banner/detail-banner.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
-import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { ShopHomeComponent } from './shop-home/shop-home.component';
 import { NavSearchComponent } from './nav-search/nav-search.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -77,7 +77,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
